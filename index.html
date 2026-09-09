@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0a0b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="FRAME" />
+  <title>FRAME — Training</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow" id="dateLabel"></div>
+        <h1>FRAME</h1>
+      </div>
+      <button class="icon-btn" id="installBtn" aria-label="Instalează aplicația" title="Instalează">＋</button>
+    </header>
+
+    <main id="view" class="view"></main>
+
+    <div id="restDock" class="rest-dock hidden" aria-live="polite">
+      <div>
+        <span class="rest-label">REST</span>
+        <strong id="restTime">02:00</strong>
+      </div>
+      <div class="rest-actions">
+        <button class="ghost small" id="restPlus">+30s</button>
+        <button class="ghost small" id="restSkip">Skip</button>
+      </div>
+    </div>
+
+    <nav class="bottom-nav" aria-label="Navigație">
+      <button data-tab="today" class="nav-item active"><span>◉</span><small>Today</small></button>
+      <button data-tab="plan" class="nav-item"><span>▤</span><small>Plan</small></button>
+      <button data-tab="skill" class="nav-item"><span>△</span><small>Skill</small></button>
+      <button data-tab="progress" class="nav-item"><span>↗</span><small>Progress</small></button>
+    </nav>
+  </div>
+
+  <dialog id="modal" class="modal"></dialog>
+  <input id="importInput" type="file" accept="application/json" hidden />
+
+  <script src="app.js"></script>
+</body>
+</html>
